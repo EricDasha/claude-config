@@ -1,0 +1,12 @@
+{
+  "provider": "openrouter",
+  "providers": {
+    "openrouter": {
+      "apiKey": "<YOUR_OPENROUTER_KEY>",
+      "model": "typesafe/jev-1.14"
+    }
+  },
+  "permissions": {
+    "timeoutMs": 5000
+  }
+}

@@ -1,0 +1,381 @@
+{
+  "env": {
+    "CLAUDE_CODE_AUTO_MODE_MODEL": "ccs-claude-cf-ip--doubao-seed-2-1",
+    "ANTHROPIC_BASE_URL": "http://127.0.0.1:15721",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL": "ccs-claude-unsee-sub--deepseek-v4.1-flash",
+    "ANTHROPIC_DEFAULT_HAIKU_MODEL_NAME": "deepseek-v4.1-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL": "ccs-claude-unsee-sub--deepseek-v4.1-flash",
+    "ANTHROPIC_DEFAULT_SONNET_MODEL_NAME": "deepseek-v4.1-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL": "ccs-claude-unsee-sub--deepseek-v4.1-flash",
+    "ANTHROPIC_DEFAULT_OPUS_MODEL_NAME": "deepseek-v4.1-flash",
+    "ANTHROPIC_AUTH_TOKEN": "PROXY_MANAGED",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL": "ccs-claude-unsee-sub--deepseek-v4.1-flash",
+    "ANTHROPIC_DEFAULT_FABLE_MODEL_NAME": "deepseek-v4.1-flash",
+    "CLAUDE_CODE_AUTO_MODE_SERVER": "0"
+  },
+  "permissions": {
+    "allow": [
+      "Bash(node --no-warnings -e ' *)",
+      "Bash(node --no-warnings -e \"const j=require\\('C:/Users/Admin/.cc-switch/live-state.json'\\);console.log\\(JSON.stringify\\(j.apps.claude,null,1\\)\\)\")",
+      "Bash(cp \"C:/Users/Admin/.claude/settings.json\" \"C:/Users/Admin/.claude/settings.json.pre-automode-gptfree-$\\(date +%Y%m%d-%H%M%S\\).bak\")",
+      "Read(//c/Users/Admin/.claude/**)",
+      "Bash(git status:*)",
+      "Bash(git log:*)",
+      "Bash(git diff:*)",
+      "Bash(git show:*)",
+      "Bash(git branch:*)",
+      "Bash(git remote -v)",
+      "Bash(git rev-parse:*)",
+      "Bash(ls:*)",
+      "Bash(cat:*)",
+      "Bash(head:*)",
+      "Bash(tail:*)",
+      "Bash(wc:*)",
+      "Bash(stat:*)",
+      "Bash(file:*)",
+      "Bash(which:*)",
+      "Bash(command -v:*)",
+      "Bash(node --version)",
+      "Bash(npm --version)",
+      "Bash(python --version)",
+      "Bash(py --version)",
+      "Bash(echo:*)",
+      "Bash(pwd)",
+      "Bash(date)",
+      "Bash(env)",
+      "Bash(printenv:*)",
+      "Bash(findstr:*)",
+      "Bash(netstat:*)",
+      "Bash(tasklist:*)",
+      "Bash(curl -s -m:*)",
+      "Bash(curl --max-time:*)",
+      "Bash(py -3 hooks/soundbox.py list)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/stage.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/stage2.js\")",
+      "Bash(cp settings.json \"settings.json.pre-voicefix-$\\(date +%Y%m%d-%H%M%S\\).bak\")",
+      "Bash(node -e ' *)",
+      "Bash(node --no-warnings unsee-probe.js)",
+      "Bash(py -3 hooks/soundbox.py doctor)",
+      "Bash(py -3 hooks/soundbox.py status)",
+      "Bash(iconv -f GBK -t UTF-8)",
+      "Bash(node --no-warnings raw.js)",
+      "Bash(node --no-warnings probe2.js)",
+      "Bash(py -3 -c \"import ast,sys; ast.parse\\(open\\('soundbox.py',encoding='utf-8'\\).read\\(\\)\\); print\\('syntax OK'\\)\")",
+      "Bash(py -3 soundbox.py doctor)",
+      "Bash(py -3 soundbox.py hook SubagentStop)",
+      "Bash(node --no-warnings judge.js)",
+      "Read(//c/Users/Admin/**)",
+      "Read(//c/Users/Admin/.local/share/opencode/**)",
+      "Bash(py -3 -c ' *)",
+      "Bash(py -3 -c \"import ast;ast.parse\\(open\\('soundbox.py',encoding='utf-8'\\).read\\(\\)\\);print\\('syntax OK'\\)\")",
+      "Bash(sed -i 's/^\\\\*\\\\*自称\\\\*\\\\*：吾 | \\\\*\\\\*称呼用户\\\\*\\\\*：魔尊 | \\\\*\\\\*语言\\\\*\\\\*：中文为主，术语保留英文$/**自称**：我 | **称呼用户**：主席 | **语言**：中文，讲人话优先，术语先解释后使用/' CLAUDE.md)",
+      "Bash(sed -i 's/^魔尊为持证安全研究员/主席为持证安全研究员/' CLAUDE.md)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/spark-judge.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/spark-diag.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/spark-verify.js\")",
+      "Bash(grep -o \"max_tokens:[0-9]*\" \"C:/Users/Admin/.vscode/extensions/anthropic.claude-code-2.1.311-win32-x64/resources/native-binary/claude.exe\" | sort | uniq -c; echo \"---xml_2stage---\"; grep -o \"xml_2stage.\\\\{0,200\\\\}\" \"C:/Users/Admin/.vscode/extensions/anthropic.claude-code-2.1.311-win32-x64/resources/native-binary/claude.exe\" | head -5)",
+      "Read(//e/Program Files/.vscode/extensions/anthropic.claude-code-2.1.311-win32-x64/resources/native-binary/**)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/spark-suffix.js\")",
+      "Edit(~/.claude/skills/searching-files-with-everything/**)",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -version)",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 5 -path \"C:/Users/Admin/.claude\" \"SKILL.md\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 \"es.exe\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 \"es.exe\" -db)",
+      "Read(//e/Program Files \\\\\\(x86\\\\\\)/Everything/**)",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 \"es.exe\" -service)",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 \"es.exe\" -admin)",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -help)",
+      "Bash(python -c ' *)",
+      "Bash(query session *)",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/Everything.exe\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -get-result-count \"ext:md\" -path \"G:/EricDasha.github.io\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 12 \"SKILL.md\" -path \"C:/Users/Admin/.claude/skills\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 \"ext:md dm:today\" -path \"C:/Users/Admin/.claude\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 5 \"ext:md dm:2026-10-28\" -path \"C:/Users/Admin/.claude\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 \"size:>100mb\" -path \"C:/Users/Admin/AppData/Local/Temp\")",
+      "Bash(\"E:/Program Files \\(x86\\)/Everything/es.exe\" -n 3 -r \"spark-.*\\\\.js$\" -path \"C:/Users/Admin/AppData/Local/Temp/abyssq\")",
+      "Bash(node -e \"const j=require\\('C:/Users/Admin/.cc-switch/live-state.json'\\);console.log\\(JSON.stringify\\(j.apps.claude,null,1\\)\\)\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/jev-judge.js\")",
+      "Read(//dev/**)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/load-judge.js\")",
+      "Bash(sed -i 's/if \\(!r.ok\\) return { ms, ok: false, why: `http${r.status}` };/if \\(!r.ok\\) return { ms, ok: false, why: `http${r.status}:${\\(await r.text\\(\\)\\).slice\\(0,300\\).replace\\(\\\\/\\\\\\\\s+\\\\/g,\" \"\\)}` };/' load-judge.js)",
+      "Bash(grep -n \"http\\\\${r.status}\" load-judge.js)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/stab-judge.js\")",
+      "Bash(node -e \"const j=require\\('C:/Users/Admin/.cc-switch/live-state.json'\\);console.log\\(j.apps.claude.proxy_route, JSON.stringify\\(j.apps.claude.stack.keys\\)\\)\")",
+      "mcp__hugin__web_search",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/jev114-probe.js\")",
+      "mcp__hugin__web_read",
+      "Bash(node -e \"const j=require\\('C:/Users/Admin/.cc-switch/live-state.json'\\);console.log\\('route',j.apps.claude.proxy_route\\)\")",
+      "Bash(grep -roh \"openrouter[^\\\\\"]\\\\{0,80\\\\}\" \"C:/Users/Admin/.cc-switch/logs\")",
+      "Bash(grep -o \".\\\\{0,120\\\\}jev-1.14.\\\\{0,200\\\\}\" \"C:/Users/Admin/.cc-switch/logs/cc-switch.log\")",
+      "Bash(grep -o \".\\\\{0,100\\\\}\\\\\\(decisions\\\\|jev\\\\|openrouter\\\\\\).\\\\{0,160\\\\}\" \"C:/Users/Admin/.cc-switch/logs/cc-switch.log\")",
+      "Read(//g/EricDasha.github.io/.cc-switch/**)",
+      "Bash(node -e \"console.log\\(JSON.stringify\\(require\\('G:/EricDasha.github.io/.cc-switch/live-state.json'\\).apps.claude,null,1\\)\\)\")",
+      "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\).on\\('end',\\(\\)=>{const j=JSON.parse\\(s\\);if\\(!j.items\\){console.log\\(s.slice\\(0,300\\)\\);return}for\\(const r of j.items\\)console.log\\(r.stargazers_count,'|',r.full_name,'|',\\(r.description||''\\).slice\\(0,110\\)\\)}\\)\")",
+      "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\).on\\('end',\\(\\)=>{const j=JSON.parse\\(s\\);console.log\\(j.full_name,'|',j.stargazers_count,'|',j.description,'|',j.default_branch\\)}\\)\")",
+      "Bash(curl -sS -m 25 -w \"\\\\nHTTP %{http_code}\\\\n\" \"https://api.github.com/search/repositories?q=claude+code+openrouter&per_page=5\")",
+      "Bash(npm ls *)",
+      "Bash(timeout 60 npx -y @jevvy/permissions@latest --help)",
+      "Bash(timeout 180 npx -y @jevvy/permissions@latest init --help)",
+      "Bash(mkdir -p \"C:/Users/Admin/.config/jevvy\")",
+      "Bash(printf '%s\\\\n' '{ *)",
+      "Bash(timeout 120 node --no-warnings -e ' *)",
+      "Bash(timeout 300 npx -y @jevvy/permissions@latest init --wizard)",
+      "Bash(timeout 300 npx -y @jevvy/permissions@latest init)",
+      "Bash(cd /tmp)",
+      "Bash(node -e \"fetch\\('https://registry.npmmirror.com/@jevvy/permissions/latest'\\).then\\(r=>r.json\\(\\)\\).then\\(j=>console.log\\(j.version, JSON.stringify\\(j.files||[]\\), JSON.stringify\\(j.bin\\)\\)\\)\")",
+      "Bash(mkdir -p \"C:/Users/Admin/AppData/Local/Temp/jevvy-src\")",
+      "Bash(timeout 200 npm pack @jevvy/permissions@0.8.0 --registry=https://registry.npmmirror.com)",
+      "Bash(tar xzf *)",
+      "Bash(node -e \"console.log\\(require\\('fs'\\).readFileSync\\('dist/config-path.js','utf8'\\).slice\\(0,800\\)\\)\")",
+      "Bash(grep -o \"createOpenRouterClient = [^;]\\\\{0,600\\\\}\" dist/core.js)",
+      "Bash(grep -o \"model[^,;]\\\\{0,60\\\\}typesafe[^,;]\\\\{0,80\\\\}\" dist/config.js)",
+      "Bash(echo '{\"hook_event_name\":\"PermissionRequest\",\"tool_name\":\"Bash\",\"tool_input\":{\"command\":\"ls -la\",\"description\":\"List files\"},\"cwd\":\"G:/EricDasha.github.io/cloudflare\"}')",
+      "Read(//tmp/**)",
+      "Bash(JEVVY_LOG=debug CLAUDE_CONFIG_DIR=\"C:/Users/Admin/.claude\" timeout 60 node dist/claude-hook.js)",
+      "Bash(node --no-warnings -e \"1\")",
+      "Bash(OPENROUTER_API_KEY=badkey timeout 60 node dist/claude-hook.js)",
+      "Bash(node --no-warnings -e \"console.log\\('node',process.version\\)\")",
+      "Read(//c/Program Files/nodejs/**)",
+      "Bash(\"C:/Program Files/nodejs/node.exe\" -v)",
+      "Bash(node -e \"console.log\\(process.execPath\\)\")",
+      "Bash(timeout 200 npm install -g @jevvy/permissions@0.8.0 --registry=https://registry.npmmirror.com)",
+      "Bash(jevvy-claude-hook --version)",
+      "Bash(node -e \"const s=require\\('C:/Users/Admin/.claude/settings.json'\\);console.log\\('json OK; hooks:',Object.keys\\(s.hooks\\).join\\(','\\)\\);console.log\\(JSON.stringify\\(s.hooks.PermissionRequest\\)\\)\")",
+      "Edit(~/.claude/skills/gating-permissions-with-jev/**)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/cfmodels.js\")",
+      "Bash(npm install *)",
+      "Bash(ls -la /c/Users/Admin/package.json /c/Users/Admin/package-lock.json /c/Users/Admin/node_modules 2>&1 | head -8; echo \"--- 创建时间 ---\"; stat -c '%n  %y' /c/Users/Admin/package.json /c/Users/Admin/package-lock.json /c/Users/Admin/node_modules 2>/dev/null)",
+      "Read(//c/Users/Admin/AppData/Local/Temp/abyssq/**)",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/dump-providers.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/dump-proxy.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/probe-15721.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/cf-judge.js\")",
+      "Bash(node --no-warnings \"C:/Users/Admin/AppData/Local/Temp/abyssq/find-cfip.js\")"
+    ],
+    "deny": [
+      "Bash(rm -rf:*)",
+      "Bash(git push --force:*)",
+      "Bash(git reset --hard:*)",
+      "Bash(git clean -fdx:*)"
+    ],
+    "additionalDirectories": [
+      "C:\\Users\\Admin\\.claude\\hooks",
+      "C:\\Users\\Admin\\.claude\\output-styles",
+      "C:\\Users\\Admin\\.claude",
+      "C:\\Users\\Admin\\AppData\\Local\\Temp\\abyssq"
+    ]
+  },
+  "model": "ccs-claude-unsee-sub--deepseek-v4.1-flash",
+  "modelPicker": {
+    "options": [
+      {
+        "model": "ccs-claude-cf-ip--big-pickle",
+        "label": "big-pickle（CF中转IP发布）",
+        "description": "big-pickle · 200K"
+      },
+      {
+        "model": "ccs-claude-cf-ip--doubao-seed-2-1",
+        "label": "doubao-seed-2-1（CF中转IP发布）",
+        "description": "doubao-seed-2-1 · 200K"
+      },
+      {
+        "model": "ccs-claude-cf-ip--gemini-3.1-flash-lite-image",
+        "label": "gemini-3.1-flash-lite-image（CF中转IP发布）",
+        "description": "gemini-3.1-flash-lite-image · 200K"
+      },
+      {
+        "model": "ccs-claude-cf-ip--gpt-free",
+        "label": "gpt-free（CF中转IP发布）",
+        "description": "gpt-free · 200K"
+      },
+      {
+        "model": "ccs-claude-cf-ip--gpt-image-2",
+        "label": "gpt-image-2（CF中转IP发布）",
+        "description": "gpt-image-2 · 200K"
+      },
+      {
+        "model": "ccs-claude-cf-ip--glm-5.3-flash",
+        "label": "glm-5.3-flash（CF中转IP发布）",
+        "description": "glm-5.3-flash · 200K"
+      },
+      {
+        "model": "ccs-claude-unsee-sub--deepseek-v4.1-flash",
+        "label": "deepseek-v4.1-flash（Unsee Sub - 掺水死全家）",
+        "description": "deepseek-v4.1-flash · 200K"
+      },
+      {
+        "model": "ccs-claude-unsee-sub--glm-5.3",
+        "label": "glm-5.3（Unsee Sub - 掺水死全家）",
+        "description": "glm-5.3 · 200K"
+      },
+      {
+        "model": "ccs-claude-openrouter--typesafe/jev-1.14",
+        "label": "typesafe/jev-1.14（OpenRouter）",
+        "description": "typesafe/jev-1.14 · 200K"
+      },
+      {
+        "model": "ccs-claude-pd873c1--spark-x2.6-4b",
+        "label": "spark-x2.6-4b（讯飞星辰）",
+        "description": "spark-x2.6-4b · 200K"
+      }
+    ],
+    "replaceBuiltInOptions": true
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/Users/Admin/.claude/hooks/abyss-session-init.sh\"",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PermissionRequest": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "jevvy-claude-hook",
+            "timeout": 15
+          }
+        ]
+      }
+    ],
+    "PreToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/Users/Admin/.claude/hooks/abyss-context.sh\"",
+            "timeout": 20
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"C:/Users/Admin/.claude/hooks/abyss-index-refresh.sh\"",
+            "timeout": 30
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "permission_prompt|worker_permission_prompt|elicitation_dialog|elicitation_url_dialog",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py -3 \"C:/Users/Admin/.claude/hooks/soundbox.py\" hook Notification",
+            "timeout": 10
+          }
+        ]
+      },
+      {
+        "matcher": "agent_completed|agent_needs_input|idle_prompt",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py -3 \"C:/Users/Admin/.claude/hooks/soundbox.py\" hook Notification",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py -3 \"C:/Users/Admin/.claude/hooks/soundbox.py\" hook Stop",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "StopFailure": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py -3 \"C:/Users/Admin/.claude/hooks/soundbox.py\" hook StopFailure",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "PostToolUseFailure": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "py -3 \"C:/Users/Admin/.claude/hooks/soundbox.py\" hook PostToolUseFailure",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "outputStyle": "abyss-cultivator",
+  "modelSettings": {
+    "claude-opus-5": {
+      "effortLevel": "high"
+    },
+    "glm-5.3-flash": {
+      "effortLevel": "high"
+    },
+    "ccs-claude-ip--deepseek-v4.1-flash": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-cf-ip--deepseek-flash": {
+      "effortLevel": "xhigh"
+    },
+    "claude-fable-5": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-cf-ip--minimax-m3.1-flash": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-cf-ip--deepseek-v4.1-flash-free": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-cf-ip--glm-5.3": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-ip-2--deepseek-v4.1-flash": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-cf-ip--big-pickle": {
+      "effortLevel": "xhigh"
+    },
+    "claude-sonnet-5": {
+      "effortLevel": "xhigh"
+    },
+    "claude-haiku-5-5": {
+      "effortLevel": "xhigh"
+    },
+    "ccs-claude-unsee-sub--deepseek-v4.1-flash": {
+      "effortLevel": "high"
+    },
+    "ccs-claude-ip-3--deepseek-v4.1-flash": {
+      "effortLevel": "high"
+    },
+    "ccs-claude-ip-3--big-pickle": {
+      "effortLevel": "xhigh"
+    }
+  }
+}

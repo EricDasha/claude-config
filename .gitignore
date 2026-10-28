@@ -1,0 +1,32 @@
+# 运行时状态，不入库
+sessions/
+session-env/
+shell-snapshots/
+telemetry/
+debug/
+file-history/
+state/
+cache/
+ide/
+projects/*/[0-9a-f]*/
+backups/
+
+# 临时与备份文件
+*.bak
+*.bak-*
+*.pre-*
+.last-cleanup
+.last-update-result.json
+history.jsonl
+
+# Python 缓存
+__pycache__/
+*.pyc
+
+# 嵌套 git 仓库
+skills/local/
+
+# 系统噪音
+.DS_Store
+Thumbs.db
+desktop.ini

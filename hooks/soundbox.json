@@ -1,0 +1,10 @@
+{
+  "agentEnabled": true,
+  "agent": "staplebops-01",
+  "permissionsEnabled": true,
+  "permissions": "staplebops-02",
+  "errorsEnabled": true,
+  "errors": "nope-03",
+  "volume": 0.4,
+  "mute": false
+}

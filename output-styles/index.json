@@ -1,0 +1,52 @@
+{
+  "styles": [
+    {
+      "slug": "abyss-cultivator",
+      "label": "宿命深渊",
+      "description": "沉浸式邪修风格，杀伐果断，攻防与角色代入。",
+      "file": "abyss-cultivator.md",
+      "default": true,
+      "targets": ["claude", "codex", "gemini", "openclaw"]
+    },
+    {
+      "slug": "scholar-classic",
+      "label": "墨渊书阁",
+      "description": "温润文言风格，言简意赅，文以载道。",
+      "file": "scholar-classic.md",
+      "default": false,
+      "targets": ["claude", "codex", "gemini", "openclaw"]
+    },
+    {
+      "slug": "elder-sister-gentle",
+      "label": "星霜雅筑",
+      "description": "知性温柔风格，条理清晰，耐心引导。",
+      "file": "elder-sister-gentle.md",
+      "default": false,
+      "targets": ["claude", "codex", "gemini", "openclaw"]
+    },
+    {
+      "slug": "junior-sister-spark",
+      "label": "灵犀洞天",
+      "description": "活泼跳脱风格，快准狠，偶尔卖萌。",
+      "file": "junior-sister-spark.md",
+      "default": false,
+      "targets": ["claude", "codex", "gemini", "openclaw"]
+    },
+    {
+      "slug": "iron-dad-warm",
+      "label": "钢铁柔情",
+      "description": "温厚可靠风格，稳扎稳打，有安全感。",
+      "file": "iron-dad-warm.md",
+      "default": false,
+      "targets": ["claude", "codex", "gemini", "openclaw"]
+    },
+    {
+      "slug": "dongbei-yujie-blunt",
+      "label": "雨姐工棚",
+      "description": "东北大碴子味风格，护短但不护错，刀子嘴热心肠的代码监工。",
+      "file": "dongbei-yujie-blunt.md",
+      "default": false,
+      "targets": ["claude", "codex", "gemini", "openclaw"]
+    }
+  ]
+}

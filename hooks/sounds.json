@@ -1,0 +1,182 @@
+{
+  "alert-01": {
+    "label": "警报 01",
+    "file": "alert-01.mp3"
+  },
+  "alert-02": {
+    "label": "警报 02",
+    "file": "alert-02.mp3"
+  },
+  "alert-03": {
+    "label": "警报 03",
+    "file": "alert-03.mp3"
+  },
+  "alert-04": {
+    "label": "警报 04",
+    "file": "alert-04.mp3"
+  },
+  "alert-05": {
+    "label": "警报 05",
+    "file": "alert-05.mp3"
+  },
+  "alert-06": {
+    "label": "警报 06",
+    "file": "alert-06.mp3"
+  },
+  "alert-07": {
+    "label": "警报 07",
+    "file": "alert-07.mp3"
+  },
+  "alert-08": {
+    "label": "警报 08",
+    "file": "alert-08.mp3"
+  },
+  "alert-09": {
+    "label": "警报 09",
+    "file": "alert-09.mp3"
+  },
+  "alert-10": {
+    "label": "警报 10",
+    "file": "alert-10.mp3"
+  },
+  "bip-bop-01": {
+    "label": "Bip-bop 01",
+    "file": "bip-bop-01.mp3"
+  },
+  "bip-bop-02": {
+    "label": "Bip-bop 02",
+    "file": "bip-bop-02.mp3"
+  },
+  "bip-bop-03": {
+    "label": "Bip-bop 03",
+    "file": "bip-bop-03.mp3"
+  },
+  "bip-bop-04": {
+    "label": "Bip-bop 04",
+    "file": "bip-bop-04.mp3"
+  },
+  "bip-bop-05": {
+    "label": "Bip-bop 05",
+    "file": "bip-bop-05.mp3"
+  },
+  "bip-bop-06": {
+    "label": "Bip-bop 06",
+    "file": "bip-bop-06.mp3"
+  },
+  "bip-bop-07": {
+    "label": "Bip-bop 07",
+    "file": "bip-bop-07.mp3"
+  },
+  "bip-bop-08": {
+    "label": "Bip-bop 08",
+    "file": "bip-bop-08.mp3"
+  },
+  "bip-bop-09": {
+    "label": "Bip-bop 09",
+    "file": "bip-bop-09.mp3"
+  },
+  "bip-bop-10": {
+    "label": "Bip-bop 10",
+    "file": "bip-bop-10.mp3"
+  },
+  "nope-01": {
+    "label": "Nope 01",
+    "file": "nope-01.mp3"
+  },
+  "nope-02": {
+    "label": "Nope 02",
+    "file": "nope-02.mp3"
+  },
+  "nope-03": {
+    "label": "Nope 03",
+    "file": "nope-03.mp3"
+  },
+  "nope-04": {
+    "label": "Nope 04",
+    "file": "nope-04.mp3"
+  },
+  "nope-05": {
+    "label": "Nope 05",
+    "file": "nope-05.mp3"
+  },
+  "nope-06": {
+    "label": "Nope 06",
+    "file": "nope-06.mp3"
+  },
+  "nope-07": {
+    "label": "Nope 07",
+    "file": "nope-07.mp3"
+  },
+  "nope-08": {
+    "label": "Nope 08",
+    "file": "nope-08.mp3"
+  },
+  "nope-09": {
+    "label": "Nope 09",
+    "file": "nope-09.mp3"
+  },
+  "nope-10": {
+    "label": "Nope 10",
+    "file": "nope-10.mp3"
+  },
+  "nope-11": {
+    "label": "Nope 11",
+    "file": "nope-11.mp3"
+  },
+  "nope-12": {
+    "label": "Nope 12",
+    "file": "nope-12.mp3"
+  },
+  "staplebops-01": {
+    "label": "Staplebops 01",
+    "file": "staplebops-01.mp3"
+  },
+  "staplebops-02": {
+    "label": "Staplebops 02",
+    "file": "staplebops-02.mp3"
+  },
+  "staplebops-03": {
+    "label": "Staplebops 03",
+    "file": "staplebops-03.mp3"
+  },
+  "staplebops-04": {
+    "label": "Staplebops 04",
+    "file": "staplebops-04.mp3"
+  },
+  "staplebops-05": {
+    "label": "Staplebops 05",
+    "file": "staplebops-05.mp3"
+  },
+  "staplebops-06": {
+    "label": "Staplebops 06",
+    "file": "staplebops-06.mp3"
+  },
+  "staplebops-07": {
+    "label": "Staplebops 07",
+    "file": "staplebops-07.mp3"
+  },
+  "yup-01": {
+    "label": "Yup 01",
+    "file": "yup-01.mp3"
+  },
+  "yup-02": {
+    "label": "Yup 02",
+    "file": "yup-02.mp3"
+  },
+  "yup-03": {
+    "label": "Yup 03",
+    "file": "yup-03.mp3"
+  },
+  "yup-04": {
+    "label": "Yup 04",
+    "file": "yup-04.mp3"
+  },
+  "yup-05": {
+    "label": "Yup 05",
+    "file": "yup-05.mp3"
+  },
+  "yup-06": {
+    "label": "Yup 06",
+    "file": "yup-06.mp3"
+  }
+}
