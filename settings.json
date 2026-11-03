@@ -194,7 +194,16 @@
       "Bash(node exe_grep.js 'hookEventName:\"PermissionRequest\"')",
       "Bash(node exe_grep.js \"tool.check\")",
       "Bash(node jev_as_classifier.js)",
-      "Read(//e/Program Files/Git/bin/**)"
+      "Read(//e/Program Files/Git/bin/**)",
+      "Bash(git add *)",
+      "Bash(grep -rlaE \"sk-or-v1-[A-Za-z0-9]{40,}\" . --exclude-dir=.git)",
+      "Bash(git -c core.autocrlf=false commit -q -F -)",
+      "Bash(git push *)",
+      "Bash(git fetch *)",
+      "Read(//g/EricDasha.github.io/**)",
+      "Bash(cp /c/Users/Admin/.claude/settings.json settings.json)",
+      "Bash(cp /c/Users/Admin/.claude/settings.json /c/Users/Admin/.claude/settings.json.bak-prune-20261103)",
+      "Bash(python -)"
     ],
     "deny": [
       "Bash(rm -rf:*)",

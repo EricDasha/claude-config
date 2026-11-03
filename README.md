@@ -15,6 +15,8 @@
 | `skills/` | `~/.claude/skills/` | 全部技能（40+，含 `_kernel` 决策内核） |
 | `hooks/` | `~/.claude/hooks/` | 钩子脚本 + 音效库（47 个 mp3） |
 | `memory/` | `~/.claude/projects/<项目>/memory/` | 跨会话记忆 |
+| `skills/local/` | `~/.claude/skills/local/` | 本机自建技能（非官方市场） |
+| `mcp/servers.json` | 合并进 `~/.claude.json` 的 `mcpServers` 字段 | MCP 服务器定义 |
 | `jevvy/jevvy.jsonc` | `~/.config/jevvy/jevvy.jsonc` | 权限门禁配置 |
 
 ## 恢复步骤
@@ -34,7 +36,21 @@ cp ~/claude-config/jevvy/jevvy.jsonc ~/.config/jevvy/
 
 # 4. jevvy 本体需要另装
 npm install -g @jevvy/permissions@0.8.0
+
+# 5. MCP 服务器：合并回 ~/.claude.json
+#    mcp/servers.json 的 mcpServers 字段，整段并进 ~/.claude.json 的同名字段
 ```
+
+### MCP 依赖
+
+`mcp/servers.json` 只存**启动方式**，服务本身要另行安装：
+
+| 服务 | 入口 | 依赖 |
+|---|---|---|
+| `hugin` | `G:\tools\hugin-mcp\...\@ketlark\hugin-mcp\src\index.js` | 需 `G:\tools\hugin-mcp` 存在 |
+| `websearch` | `G:\tools\websearch\...\my-websearch\build\index.js` | 需 `G:\tools\websearch` 存在 |
+
+换机器时需要先恢复这两个目录，否则 MCP 起不来。
 
 ## 密钥处理
 

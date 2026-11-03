@@ -1,0 +1,23 @@
+{
+  "_comment": "从 C:UsersAdmin.claude.json 的 mcpServers 字段抽出。恢复时合并回该文件的 mcpServers 即可。",
+  "mcpServers": {
+    "hugin": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "E:\\Program Files\\nodejs\\node.exe",
+        "G:\\tools\\hugin-mcp\\node_modules\\@ketlark\\hugin-mcp\\src\\index.js"
+      ]
+    },
+    "websearch": {
+      "type": "stdio",
+      "command": "cmd",
+      "args": [
+        "/c",
+        "node",
+        "G:\\tools\\websearch\\node_modules\\my-websearch\\build\\index.js"
+      ]
+    }
+  }
+}

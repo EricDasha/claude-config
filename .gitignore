@@ -24,7 +24,7 @@ __pycache__/
 *.pyc
 
 # 嵌套 git 仓库
-skills/local/
+# skills/local/  —— 已有 diagnosing-auto-mode-classifier，故意入库（无密钥、无本机路径）
 
 # 系统噪音
 .DS_Store
