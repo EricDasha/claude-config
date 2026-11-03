@@ -2,7 +2,7 @@
 
 本仓库是 `C:\Users\Admin\.claude\` 的配置快照，用于灾难恢复。**不是可直接运行的安装包**，恢复时需要按下面的路径放回。
 
-最后更新：2026-10-29
+最后更新：2026-11-03
 
 ## 目录结构
 
@@ -60,21 +60,47 @@ Claude Code → 127.0.0.1:15721 (cc-switch) → 真实 provider
 - 真实 provider 配置在 **`G:\EricDasha.github.io\.cc-switch\cc-switch.db`**，不是 `C:\Users\Admin\.cc-switch\`（那边只有 Claude Official）
 - 详细见 `memory/claude-code-model-routing.md`
 
-### 审查器选型
+### Git Bash 路径
 
-`CLAUDE_CODE_AUTO_MODE_MODEL` 指向的模型挂掉会导致**所有工具调用被拦**。实测结论：
+Git 装在 `E:\Program Files\Git`（非默认盘），Claude Code 找不到 Bash，会导致 **Bash 工具整体不可用**、所有命令回落到 PowerShell。`settings.json` 里用环境变量显式指定：
 
-| 模型 | 得分 | 备注 |
+```json
+"CLAUDE_CODE_GIT_BASH_PATH": "E:\\Program Files\\Git\\bin\\bash.exe"
+```
+
+换机器或重装 Git 后，这一条必须同步改。
+
+### 自动模式：已放弃
+
+2026-11-03 起不再使用 `permissions.defaultMode: "auto"`，相关环境变量（`CLAUDE_CODE_AUTO_MODE_MODEL`、`CLAUDE_CODE_AUTO_MODE_SERVER`）已全部删除，回到普通模式。
+
+放弃的原因不是模型选型，是**结构性问题**：
+
+| 问题 | 实测结论 |
+|---|---|
+| 延迟 | 真实请求约 14 万字符 / 3.5 万 token，单次判定 56~60 秒，比人工点一下还慢 |
+| 插件/hook 无法放行 | 二进制内 `hookAllowClassified` 门禁：自动模式下插件只能**收紧**，`allow` 一律作废 |
+| jev 不能当审查器 | jev-1.14 是 decisions 模型，`/v1/messages` 直接 HTTP 400 |
+
+也就是说「jev 全量接管、危险的再交审查模型兜底」这条路，在自动模式下**走不通**——jev 的 allow 会被门禁丢掉。
+
+实测过的模型（供日后参考）：
+
+| 模型 | 判定准确率 | 备注 |
 |---|---|---|
-| `doubao-seed-2-1` | **4/4** | 当前在用，最快的 1.4s |
+| `doubao-seed-2-1` | 4/4 | 响应 ~1.4s，但整段 payload 仍要 56s+ |
 | `big-pickle` | 4/4 | 可用 |
-| `spark-x2.6-4b` | 3/8 失败 | 思考块吃掉 64 token，不可用 |
+| `spark-x2.6-4b` | 0 误放 / 12 安全命令 0 误拦 | **判定准确**，但同样扛不住 3.5 万 token |
 | `gpt-free` / `gpt-image-2` | 0/4 | **整齐答反**，最危险 |
 | `glm-5.3-flash` | 0/4 | 502 |
+
+结论：**准确率不是瓶颈，延迟才是**。当前走普通模式，靠 `permissions.allow` 白名单降噪（白名单命中直接放行，根本不进审查器）+ jevvy 钩子判危险命令。
 
 ### jevvy 权限门禁
 
 挂在 `PermissionRequest` 钩子，用 `typesafe/jev-1.14`（决策模型）判断命令是否放行。**只放不拦**——超时或出错都回落到人工弹窗。
+
+前提是**普通模式**。自动模式下钩子的 allow 会被核心引擎丢弃（见上），只有 deny 有效。
 
 注意 jev 是 decisions 模型，**不能**当聊天模型或自动模式审查器（协议不兼容，直接 400）。
 

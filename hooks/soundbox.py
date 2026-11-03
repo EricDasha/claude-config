@@ -111,6 +111,16 @@ DEBOUNCE = {
 # 按 Esc 却在耳边炸 Nope 03，才是「莫名其妙突然响起」。
 STOP_FAILURE_BENIGN = {"aborted", "user_interrupt", "interrupted"}
 
+# 错误音只该在「工作被直接中断」时响。这些 error 意味着这一轮真的走不下去了：
+# 额度耗尽、认证失效、模型不存在、请求被永久拒绝 —— 不看就卡死。
+# 其余（overloaded / server_error / rate_limit / unknown 等）客户端会自动重试，
+# 重试成功后用户根本感知不到，响一嗓子纯属报假警。
+STOP_FAILURE_FATAL = {
+    "authentication_failed", "oauth_org_not_allowed", "account_on_hold",
+    "verification_required", "billing_error", "invalid_request",
+    "model_not_found", "max_output_tokens", "cloud_credential_error",
+}
+
 # 父代理在替子代理收尾 / 空闲通知时会带着这些 notification_type 发 Stop。
 SUBAGENT_STOP_TYPES = {"agent_completed", "agent_needs_input", "idle_prompt"}
 
@@ -120,6 +130,10 @@ SUBAGENT_STOP_TYPES = {"agent_completed", "agent_needs_input", "idle_prompt"}
 # doctor 的响度底线（峰值 dBFS）。低于此值视为「播了也听不见」。
 # -40 是保守阈值：正常提示音峰值在 -25 左右，坏素材会是 -60 上下。
 PEAK_FLOOR_DB = -40.0
+
+# 错误音冷静期（秒）：同类错误在这段时间内只响一次。
+# 错误音最刺耳，连环致命错误响成一片比误报更让人焦虑。
+ERROR_COOLDOWN = 60.0
 
 
 def load_catalog():
@@ -238,6 +252,29 @@ def _classify(event, payload):
     return ch, ""
 
 
+def _error_is_fatal(event, payload):
+    """错误音只在「工作被直接中断」时响。返回 (bool, why)。
+
+    错误音是全套提示音里最刺耳的，误报一次就是一次惊吓，因此判据取最保守：
+      PostToolUseFailure: 一律不响。工具失败后模型会自己重试/换路/解释，
+                          让模型来决定要不要告诉用户，而不是由铃声抢跑。
+      StopFailure       : 只认 STOP_FAILURE_FATAL 白名单——额度、认证、模型不存在
+                          这类「当场走不下去」的错误。其余一律视为可恢复。
+    """
+    if event == "StopFailure":
+        err = str(payload.get("error", "")).lower()
+        if err in STOP_FAILURE_BENIGN:
+            return False, "用户中断 (%s)，不是错误" % err
+        if err not in STOP_FAILURE_FATAL:
+            return False, "%s 会自动重试/降级，不算中断" % (err or "unknown")
+        return True, ""
+    if event == "PostToolUseFailure":
+        if payload.get("is_interrupt"):
+            return False, "用户中断，不是错误"
+        return False, "工具报错交由模型处理，不响"
+    return True, ""
+
+
 def _stop_is_prompt(payload):
     """Stop 是否代表「真的要你介入了」。返回 (bool, why)。
 
@@ -283,14 +320,10 @@ def hook(event, payload=None):
         if not ok:
             _trace("skip", event, "不该打断: " + why)
             return 0
-    if event == "StopFailure":
-        err = str(payload.get("error", "")).lower()
-        if err in STOP_FAILURE_BENIGN:
-            _trace("skip", event, "用户中断 (%s)，不算错误" % err)
-            return 0
-    if event == "PostToolUseFailure":
-        if payload.get("is_interrupt"):
-            _trace("skip", event, "用户中断，不算错误")
+    if event in ("StopFailure", "PostToolUseFailure"):
+        ok, why = _error_is_fatal(event, payload)
+        if not ok:
+            _trace("skip", event, "不该打断: " + why)
             return 0
 
     sid = cfg.get(channel)
@@ -304,8 +337,11 @@ def hook(event, payload=None):
         sys.stderr.write("[soundbox] 音效无效: %r（通道 %s）\n" % (sid, channel))
         return 1
 
-    dkey = _debounce_key(event, channel)
-    if debounce(dkey, DEBOUNCE.get(dkey, 2.0)):
+    dkey = _debounce_key(event, channel, payload)
+    # 错误音额外加冷静期：同一类错误 60 秒内只响一次。
+    # 真正的致命错误往往会连环触发，响成一片比误报更让人焦虑。
+    hold = ERROR_COOLDOWN if channel == "errors" else DEBOUNCE.get(dkey, 2.0)
+    if debounce(dkey, hold):
         _trace("play", event, "%s -> %s (%s)" % (channel, sid, label_of(sid)))
         spawn(sid)
     else:
@@ -347,10 +383,13 @@ def _find_ffmpeg():
     return shutil.which("ffmpeg")
 
 
-def _debounce_key(event, channel):
-    """去抖键：Notification 按通道细分，其余按事件名细分。"""
+def _debounce_key(event, channel, payload=None):
+    """去抖键：Notification 按通道细分，错误事件按错误码细分，其余按事件名。"""
     if event == "Notification":
         return "Notification:%s" % channel
+    if event == "StopFailure":
+        err = str((payload or {}).get("error", "unknown")).lower() or "unknown"
+        return "StopFailure:%s" % err
     return event
 
 

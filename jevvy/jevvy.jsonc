@@ -7,6 +7,6 @@
     }
   },
   "permissions": {
-    "timeoutMs": 5000
+    "timeoutMs": 15000
   }
 }

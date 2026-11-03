@@ -77,8 +77,16 @@ py -3 "$HOME\.claude\hooks\soundbox.py" volume 0.5            # 改音量
 | `Stop` | `notification_type` 属 `agent_*` / `idle_prompt` | 父代理替子代理收尾，不是你的事 |
 | `Stop` | payload 带 `agent_id` / `parent_tool_use_id` | 同上 |
 | `SubagentStop` | 一律不挂 | 子智能体结束 ≠ 需要你介入；这是最主要的乱响来源 |
+| `StopFailure` | `error` 不在致命白名单里（如 `overloaded` / `rate_limit` / `server_error` / `unknown`） | 客户端会自动重试，用户感知不到 |
 | `StopFailure` | `error` 为 `aborted` 等 | 你按了 Esc，不是出错 |
-| `PostToolUseFailure` | `is_interrupt: true` | 同上 |
+| `PostToolUseFailure` | **一律不响** | 工具报错由模型自己重试/换路/解释，让模型决定是否告知 |
+| 错误音 | 同类错误 60 秒内只响一次 | 连环致命错误响成一片比误报更焦虑 |
+
+**错误音的白名单**（只有这些 `StopFailure.error` 才响，因为它们意味着当场走不下去）：
+`authentication_failed`、`oauth_org_not_allowed`、`account_on_hold`、`verification_required`、
+`billing_error`、`invalid_request`、`model_not_found`、`max_output_tokens`、`cloud_credential_error`。
+
+设计原则：**错误音是全套里最刺耳的，宁可漏报，不可误报。** 漏一次只是晚知道几秒，误一次就是一次惊吓。
 
 后台智能体**真正**完成时，由 `Notification:agent_completed` 接棒响 `Staplebops 01`。
 
